@@ -1,0 +1,76 @@
+#heading{
+  text-align: center;
+  background-color: tomato;
+  color: white;
+  padding: 20px;
+}
+body{
+  background-color: rgb(240, 208, 202);
+  height: 100vh;
+}
+
+input{
+  height: 40px;
+  width: 200px;
+  border: 2px solid tomato;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
+}
+
+button{
+  height: 40px;
+  width: 100px;
+  border-radius: 5px;
+}
+button:hover{
+  background-color: tomato;
+  color: white;
+  border: none;
+  scale: 1.08;
+  transition: scale 0.5s ease-in;
+}
+#child4 .btn{
+  font-size: 30px;
+}
+#buttons{
+  display: flex;
+  column-gap: 50px;
+}
+.reset{
+  font-size: 20px;
+}
+.outer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 30px;
+  padding: 50px;
+  height: 700px;
+}
+#set{
+  font-size: 20px;
+}
+#num{
+  font-size: 100px;
+  font-weight: 500;
+  font-family: 'Courier New', Courier, monospace;
+}
+#errorText{
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: 18px;
+}
+
+#child1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 30px;
+}
+.text{
+  text-align: center;
+}
