@@ -74,3 +74,128 @@ button:hover{
 .text{
   text-align: center;
 }
+
+/* Mobile View */
+@media (max-width: 768px) {
+  #heading {
+    font-size: 24px;  /* Smaller font for the heading */
+    padding: 10px;
+  }
+
+  body {
+    height: auto;
+    padding: 20px;  /* Padding for smaller screens */
+  }
+
+  input {
+    width: 150px;  /* Reduce width of input fields */
+    font-size: 16px;  /* Adjust font size */
+  }
+
+  button {
+    width: 80px;  /* Make buttons smaller */
+    font-size: 16px;
+  }
+
+  #num {
+    font-size: 60px;  /* Reduce font size of the number */
+  }
+
+  .outer {
+    padding: 20px;  /* Adjust padding */
+    height: auto;  /* Allow the container to adjust its height */
+  }
+
+  #child1 {
+    flex-direction: column;  /* Stack the input fields vertically */
+    row-gap: 15px;  /* Reduce space between input fields */
+  }
+
+  #buttons {
+    flex-direction: column;  /* Stack the buttons vertically */
+    row-gap: 10px;  /* Reduce space between buttons */
+    align-items: center;  /* Center align buttons */
+  }
+
+  .reset {
+    font-size: 18px;  /* Adjust reset button font size */
+  }
+
+  .text {
+    font-size: 14px;  /* Adjust the label font size */
+  }
+
+  #set {
+    font-size: 16px;  /* Adjust apply button font size */
+  }
+
+  #child2, #child3, #child4 {
+    width: 100%;  /* Ensure these sections take up full width */
+    text-align: center;
+  }
+}
+
+
+/* Extra Small Mobile View */
+@media (max-width: 480px) {
+  #heading {
+    font-size: 20px;
+    padding: 8px;
+  }
+
+  body {
+    padding: 10px;
+  }
+
+  input {
+    width: 100%;  /* Make input fields take full width */
+    font-size: 14px;
+  }
+
+  button {
+    width: 80px;  /* Keep buttons small */
+    font-size: 14px;
+  }
+
+  #num {
+    font-size: 50px;  /* Reduce font size for the number */
+  }
+
+  .outer {
+    padding: 15px;  /* Less padding for smaller screens */
+    height: auto;
+  }
+
+  #child1 {
+    flex-direction: column;  /* Stack input fields vertically */
+    row-gap: 10px;
+  }
+
+  #buttons {
+    flex-direction: column;  /* Stack the buttons vertically */
+    row-gap: 8px;  /* Adjust spacing */
+    align-items: center;
+  }
+
+  .reset {
+    font-size: 16px;
+  }
+
+  .text {
+    font-size: 12px;  /* Reduce font size of labels */
+  }
+
+  #set {
+    font-size: 14px;
+  }
+
+  #child2, #child3, #child4 {
+    width: 100%;
+    text-align: center;
+  }
+
+  #errorText {
+    font-size: 16px;  /* Adjust font size for error messages */
+  }
+}
+

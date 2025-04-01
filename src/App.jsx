@@ -5,54 +5,62 @@ function App()
 {
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(0);
+  const [start, setStart] = useState(0);
   const [count, setCount] = useState(0);
   const [i, setI] = useState(1);
   const [info, setInfo] = useState("");
 
-  const increment = ()=>{
+  const increment = () => {
     verifyInputValues();
-    if(count<max && !(count+Number(i) > max) && i>=1)
-    {
-      setCount(count+Number(i));
+    if (count + i > max || count === max) {
+      setInfo("You are on the edge, Can't increase more");
+    } else if (count < max) {
+      setCount(count + i);
     }
-  }
+  };
 
-  const decrement = ()=>{
+  const decrement = () => {
     verifyInputValues();
-    if(count>min && !(count-Number(i) < min) && i>=1)
-    {
-      setCount(count-Number(i));
+    if (count - i < min || count === min) {
+      setInfo("You are on the edge, Can't decrease more");
+    } else if (count > min) {
+      setCount(count - i);
     }
-  }
+  };
+
   const resetCount = ()=>{
-    setCount(0);
+    setCount(start);
   }
   const minimumValue = (e)=>{
-    setMin(e.target.value);
+    setMin(Number(e.target.value));
   }
   const incrementValue = (e) =>{
-    setI(e.target.value);
+    setI(Number(e.target.value));
+  }
+  const setStartingValue = (e)=>{
+    setStart(Number(e.target.value));
   }
   const maximumValue = (e)=>{
-    setMax(e.target.value);
+    setMax(Number(e.target.value));
   }
   const setValues = ()=>{
-    setMin(min);
-    setMax(max);
-    setI(i);
-    
+    setCount(start);
     verifyInputValues();
   }
 
+  
+
   const verifyInputValues = ()=>
-  {
-      if(min>count)
-      {
-        setInfo("Wrong Input, Minimum value cannot be more than count");
-      }
-      else if(max<count)
+  {    
+    console.log('min : '+min, 'max : '+max, 'count : '+count, 'i : '+i, 'start : '+start);
+      console.log('max<count  : '+max<count); 
+      if(max<count || max<start)
       {
         setInfo("Wrong Input, Maximum value cannot be less than count");
+      }
+      else if(min>count || min>start)
+      {
+        setInfo("Wrong Input, Minimum value cannot be more than count");
       }
       else if(max==0 && min==0)
       {
@@ -62,20 +70,13 @@ function App()
       {
         setInfo("Let Set Count...");
       }
-
-      if(count+Number(i) > max)
-      {
-        setInfo("You are on the edge, Can't increase more")
-      }
-      if(count-Number(i) < min)
-      {
-        setInfo("You are on the edge, Can't decrease more")
-      }
   
       if(i<1)
       {
         setInfo("Increment value cannot be zero or negative")
       }
+      console.log('min : '+min, 'max : '+max, 'count : '+count, 'i : '+i, 'start : '+start);
+      console.log('max<count  : '+max<count);
   }
 
 
@@ -86,15 +87,19 @@ function App()
           <div id="child1">
             <div>
               <p className='text'>Enter minimum value</p>
-              <input type="text" value={min} onChange={minimumValue} />
+              <input type="number" value={min} onChange={minimumValue} />
             </div>
             <div>
               <p className='text'>Enter increment value</p>
-              <input type="text" value={i} onChange={incrementValue} />
+              <input type="number" value={i} onChange={incrementValue} />
+            </div>
+            <div>
+              <p className='text'>Enter starting value</p>
+              <input type="number" value={start} onChange={setStartingValue} />
             </div>
             <div>
               <p className='text'>Enter maximum value</p>
-              <input type="text" value={max} onChange={maximumValue} />
+              <input type="number" value={max} onChange={maximumValue} />
             </div>
           </div>
           <div id="child2">
